@@ -29,7 +29,10 @@
             "styles": [
               "src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [
+              "src/app/vendor/keylines.js",
+              "src/scripts/custom-font-loader.js"
+            ]
           },
           "configurations": {
             "production": {

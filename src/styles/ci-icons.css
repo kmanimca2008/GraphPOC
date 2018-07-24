@@ -1,0 +1,30 @@
+@font-face {
+	font-family: "ci-icons";
+	src: url("ci-icons.eot?d2074e48f71c1132eb23598b33682133?#iefix") format("embedded-opentype"),
+url("ci-icons.woff2?d2074e48f71c1132eb23598b33682133") format("woff2"),
+url("ci-icons.woff?d2074e48f71c1132eb23598b33682133") format("woff");
+}
+
+.ci {
+	line-height: 1;
+}
+
+.ci:before {
+	font-family: ci-icons !important;
+	font-style: normal;
+	font-weight: normal !important;
+	vertical-align: top;
+}
+
+.ci-alarm:before {
+	content: "\f101";
+}
+.ci-apps:before {
+	content: "\f102";
+}
+.ci-assurance:before {
+	content: "\f103";
+}
+.ci-bell:before {
+	content: "\f104";
+}

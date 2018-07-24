@@ -74,24 +74,31 @@ export class AppComponent implements OnInit {
   }
 
   applyGrouping() {
-    const groupingResponses: Promise<Array<string>>[] = [];
     const groups = this.getGroups();
-
-    groups.forEach((g: any) => {
-
-      groupingResponses.push(this.combineNodes(g.node));
+    const comboDefs = groups.map((nodes: any) => {
+      const comboOpenStyle = this.getComboDefaultOpenStyle();
+      const comboGlyph = this.getGlyphDefaultStyle();
+      const comboDef = <KeyLines.ComboDefinition>{
+        ids: nodes.map(n => n.id),
+        openStyle: comboOpenStyle,
+        glyph: comboGlyph,
+        position: 'average',
+        label: nodes[0].d.parentid,
+        d: nodes[0].d,
+        open: false
+      };
+      comboDef.d.parent = true;
+      return comboDef;
     });
-    return Promise.all(groupingResponses);
-
+    return this.chart.combo().combine(comboDefs, this.getCombineDefaultOptions());
   }
 
   getGroups() {
     return [
-      { node: [this.chart.getItem('2.1'), this.chart.getItem('2.2')] },
-      { node: [this.chart.getItem('3.1'), this.chart.getItem('3.2')] },
+      [this.chart.getItem('2.1'), this.chart.getItem('2.2')],
+      [this.chart.getItem('3.1'), this.chart.getItem('3.2')],
     ];
   }
-
   combineNodes(nodes: KeyLines.Node[]): Promise<Array<string>> {
     const comboOpenStyle = this.getComboDefaultOpenStyle();
     const comboGlyph = this.getGlyphDefaultStyle();
@@ -139,7 +146,7 @@ export class AppComponent implements OnInit {
       logo: null,
       overview: { icon: false, shown: false },
       backColour: '#fafafa',
-      iconFontFamily: 'Material Icons',
+      iconFontFamily: 'ci-icons',
       navigation: { p: 'sw', shown: true },
       handMode: true
     };
