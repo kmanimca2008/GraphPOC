@@ -1,9 +1,23 @@
-<h1>Keylines- custom font family loading issue  <i class="ci ci-apps"></i> </h1>
-<kl-components>
-  <kl-component klType='chart' klContainerClass='cichart'
-    (klEvents)='klChartEvents($event)'
-     [ngStyle]='chartComponentStyles'
-     [klOptions]='chartOptions'
-     (klReady)='klChartReady($event)'>
-  </kl-component>
-</kl-components>
+<div class="container">
+  <div class="block1">
+    <h1>Keylines- custom font family loading issue </h1>
+    <ol>
+      <li>FontAwesome icons =>
+        <i class="fa fa-cogs"></i>
+      </li>
+      <li>Material icons =>
+        <i class="material-icons">face</i>
+      </li>
+      <li>Custom icons =>
+        <i class="ci ci-apps"></i>
+      </li>
+    </ol>
+  </div>
+  <div class="block2">
+    <kl-components (klReady)='klFontReady($event)'>
+      <kl-component klType='chart' klContainerClass='cichart' (klEvents)='klChartEvents($event)' [ngStyle]='chartComponentStyles'
+        [klOptions]='chartOptions'>
+      </kl-component>
+    </kl-components>
+  </div>
+</div>

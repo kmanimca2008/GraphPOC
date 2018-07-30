@@ -1,8 +1,10 @@
 @font-face {
 	font-family: "ci-icons";
-	src: url("ci-icons.eot?d2074e48f71c1132eb23598b33682133?#iefix") format("embedded-opentype"),
-url("ci-icons.woff2?d2074e48f71c1132eb23598b33682133") format("woff2"),
-url("ci-icons.woff?d2074e48f71c1132eb23598b33682133") format("woff");
+	src: 
+	url("./ci-icons.ttf") format("ttf"),
+	url("./ci-icons.eot") format("embedded-opentype"),
+url("./ci-icons.woff2") format("woff2"),
+url("./ci-icons.woff") format("woff");
 }
 
 .ci {
@@ -10,7 +12,7 @@ url("ci-icons.woff?d2074e48f71c1132eb23598b33682133") format("woff");
 }
 
 .ci:before {
-	font-family: ci-icons !important;
+	font-family: 'ci-icons' !important;
 	font-style: normal;
 	font-weight: normal !important;
 	vertical-align: top;

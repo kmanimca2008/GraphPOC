@@ -27,11 +27,14 @@
               "src/assets"
             ],
             "styles": [
+              "./node_modules/font-awesome/css/font-awesome.css",
+              "./node_modules/material-design-icons/iconfont/material-icons.css",
+              "src/assets/fonts/ci-icons.css",
+              "src/assets/fonts/ci-icons.svg",
               "src/styles.scss"
             ],
             "scripts": [
-              "src/app/vendor/keylines.js",
-              "src/scripts/custom-font-loader.js"
+              "src/app/vendor/keylines.js"
             ]
           },
           "configurations": {

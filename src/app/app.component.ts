@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import * as WebFont from 'webfontloader';
+// import '../styles/ci-icons.css';
+
 declare const KeyLines: any;
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -22,6 +26,19 @@ export class AppComponent implements OnInit {
   }
 
   // ******************* Graph events - start ***********************/
+
+  klFontReady(input: KeyLines.Chart) {
+    WebFont.load({
+      custom: {
+        families: ['ci-icons', 'Material Icons', 'FontAwesome']
+      },
+      active: () => {
+        console.log('font family is loaded');
+        this.klChartReady(input[0]);
+      }
+    });
+  }
+
   klChartReady(chart: KeyLines.Chart) {
     this.chart = chart;
     KeyLines.getGraphEngine();
@@ -85,7 +102,7 @@ export class AppComponent implements OnInit {
         position: 'average',
         label: nodes[0].d.parentid,
         d: nodes[0].d,
-        open: false
+        open: true
       };
       comboDef.d.parent = true;
       return comboDef;

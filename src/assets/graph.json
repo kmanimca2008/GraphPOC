@@ -6,7 +6,7 @@
           "t":"1",
           "c":"transparent",
           "name":"Node1", 
-          "fi": {"c":"green", "t":"ci-apps"},         
+          "fi": {"c":"black", "t":"ci ci-alarm", "ff":"ci-icons"},         
           "e":1,
           "d":{
              "level":0
@@ -16,8 +16,9 @@
           "type":"node",
           "id":"2.1",
           "t":"2.1",
-          "c":"#0078A3",
+          "c":"transparent",
           "e":1,
+          "fi": {"c":"black", "t":"ci-apps", "ff":"ci-icons"}, 
           "d":{
              "level":1,
              "parentid":"2"
@@ -29,6 +30,7 @@
         "t":"2.2",
         "c":"#0078A3",
         "e":1,
+        "fi": {"c":"black", "t":"ci-apps", "ff":"ci-bell"},
         "d":{
            "level":1,
            "parentid":"2"
